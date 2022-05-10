@@ -9,5 +9,8 @@ public static void main(String[] args) throws IOException {
         ti.transformaNegativo();
         ti.transformaOscuro();
         ti.transformaBlancoNegro();
+        ti.transformaRed();
+        ti.transformaBlue();
+        ti.transformaGreen();
     }
 }

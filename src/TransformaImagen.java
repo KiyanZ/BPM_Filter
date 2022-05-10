@@ -73,8 +73,98 @@ public class TransformaImagen {
             fileWriter.write(change);
             fileWriter.write(change);
             value1 = bufferInput.read();
-            value1 = bufferInput.read();
-            value1 = bufferInput.read();
+            value2 = bufferInput.read();
+            value3 = bufferInput.read();
+        }
+    }
+
+    public void transformaBlue(){
+        File redtheme = new File("Resources/Jada-Kingdom-1_blue.bmp");
+        try {
+            FileInputStream fileInputStream = new FileInputStream(f);
+            BufferedInputStream reader = new BufferedInputStream(fileInputStream);
+            try {
+                byte[] meta = reader.readNBytes(54);
+                FileOutputStream writer = new FileOutputStream(redtheme);
+                writer.write(meta);
+                int change;
+                int red = reader.read();
+                int green = reader.read();
+                int blue = reader.read();
+                while((red) != -1){
+                    change = 0 ;
+                    writer.write(red);
+                    writer.write(change);
+                    writer.write(change);
+                    red = reader.read();
+                    green = reader.read();
+                    blue = reader.read();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void transformaRed(){
+        File redtheme = new File("Resources/Jada-Kingdom-1_red.bmp");
+        try {
+            FileInputStream fileInputStream = new FileInputStream(f);
+            BufferedInputStream reader = new BufferedInputStream(fileInputStream);
+            try {
+                byte[] meta = reader.readNBytes(54);
+                FileOutputStream writer = new FileOutputStream(redtheme);
+                writer.write(meta);
+                int change;
+                int blue = reader.read();
+                int green = reader.read();
+                int red = reader.read();
+                while((red) != -1){
+                    change = 0 ;
+                    writer.write(change);
+                    writer.write(change);
+                    writer.write(red);
+                    red = reader.read();
+                    green = reader.read();
+                    blue = reader.read();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void transformaGreen(){
+        File redtheme = new File("Resources/Jada-Kingdom-1_green.bmp");
+        try {
+            FileInputStream fileInputStream = new FileInputStream(f);
+            BufferedInputStream reader = new BufferedInputStream(fileInputStream);
+            try {
+                byte[] meta = reader.readNBytes(54);
+                FileOutputStream writer = new FileOutputStream(redtheme);
+                writer.write(meta);
+                int change;
+                int blue = reader.read();
+                int green = reader.read();
+                int red = reader.read();
+                while((red) != -1){
+                    change = 0 ;
+                    writer.write(change);
+                    writer.write(green);
+                    writer.write(change);
+                    red = reader.read();
+                    green = reader.read();
+                    blue = reader.read();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
     }
 
